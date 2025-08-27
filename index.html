@@ -15,7 +15,7 @@
     /* The section-bleed-outer class is now just for padding and layout, with backgrounds applied per section */
     .section-bleed-outer { padding:4rem 0; }
 
-    /* ===== Global Motion & Hover System (site‑wide) ===== */
+    /* ===== Global Motion & Hover System (site-wide) ===== */
     @keyframes gradientShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
     .animate-gradient-slow{background-size:200% 200%; animation:gradientShift 12s ease infinite}
     .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease,box-shadow .25s ease,filter .25s ease}
@@ -25,6 +25,14 @@
     .hover-tint:hover{filter:saturate(1.06)}
     .btn-lift{transition:transform .2s ease, box-shadow .2s ease}
     .btn-lift:hover{transform:translateY(-3px); box-shadow:0 14px 28px -14px rgba(0,0,0,.35)}
+
+    /* Custom styles for the mind map section */
+    .mind-map-node {
+      @apply bg-white rounded-xl shadow p-4 text-center hover-raise hover-tint border border-gray-200;
+    }
+    .mind-map-title {
+      @apply text-lg font-semibold text-[--brand];
+    }
   </style>
 </head>
 <body class="text-gray-900">
@@ -32,7 +40,7 @@
   <div class='bg-gray-900 text-white text-sm text-center py-2'>Ahmed Elposhi | B2B Marketing Leader | IT, SaaS, Cloud</div>
   
   <!-- Hero Section (Full Width) -->
-  <header class="relative animate-gradient-slow bg-gradient-to-r from-[--brand] via-[--accent2] to-[--accent] text-white rounded-2xl overflow-hidden shadow-xl mb-20">
+  <header class="relative animate-gradient-slow bg-gradient-to-r from-[--brand] via-[--accent2] to-[--accent] text-white rounded-b-2xl overflow-hidden shadow-xl mb-20">
     <!-- Inner container to keep content centered -->
     <div class="container mx-auto max-w-7xl px-4 md:px-8">
       <div class="absolute inset-0 bg-black/30"></div>
@@ -55,7 +63,44 @@
     </div>
   </header>
   
-  <main class="space-y-20">
+  <main class="mt-20 mb-20">
+    <!-- Full-Stack Marketer Section -->
+    <section id="full-stack-marketer" class="section-bleed-outer reveal">
+      <div class="container mx-auto max-w-7xl p-4 md:p-8 text-center">
+        <div class="max-w-5xl mx-auto bg-white rounded-2xl shadow-xl p-8 hover-raise hover-tint">
+          <h2 class="text-3xl md:text-4xl font-extrabold text-[--brand] mb-4">The Full-Stack Marketer: From Strategy to Code</h2>
+          <div class="flex flex-col md:flex-row items-center justify-center gap-8 mb-8">
+            <div class="w-full md:w-1/2">
+                <p class="text-lg text-gray-600 mb-4 text-left">I bridge the gap between creative vision and technical execution. My career is defined by building and managing marketing ecosystems that drive measurable, repeatable revenue streams.</p>
+                <div class="grid grid-cols-1 gap-6 text-left">
+                  <div class="flex items-start gap-4">
+                    <span class="inline-flex justify-center items-center w-12 h-12 bg-pink-100 text-[--accent2] rounded-full text-xl font-bold flex-shrink-0">💡</span>
+                    <div>
+                      <h3 class="font-semibold text-lg text-[--brand]">Strategic Vision</h3>
+                      <p class="text-gray-700 text-sm">Crafting GTM strategies, planning regional campaigns, and aligning marketing goals with core business objectives.</p>
+                    </div>
+                  </div>
+                  <div class="flex items-start gap-4">
+                    <span class="inline-flex justify-center items-center w-12 h-12 bg-purple-100 text-[--brand] rounded-full text-xl font-bold flex-shrink-0">⚙️</span>
+                    <div>
+                      <h3 class="font-semibold text-lg text-[--brand]">Technical Execution</h3>
+                      <p class="text-gray-700 text-sm">Expertise in CRM, marketing automation, and analytics to build robust systems, ensuring seamless data flow and efficient lead nurturing.</p>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div class="w-full md:w-1/2 flex-shrink-0 relative reveal hover-raise hover-tint">
+              <img
+                src="https://raw.githubusercontent.com/Ahmedposhi/my-online-resume/0b4d2f6870b6615953dc98e0eb783bdf17aaca5c/fullstack-marketer.png"
+                class="rounded-xl shadow-lg w-full h-auto"
+                alt="Infographic of a full-stack marketer's skills"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- KPI Summary Section -->
     <section id="summary-with-numbers" class="section-bleed-outer bg-gray-100 reveal">
       <div class="container mx-auto max-w-7xl p-4 md:p-8 text-center">
@@ -117,6 +162,10 @@
           <div class="p-6 rounded-xl bg-white shadow hover:shadow-lg transition hover-raise hover-tint">
             <h4 class="font-bold text-[--brand] mb-2">Vendor Management</h4>
             <p class="text-l text-gray-600">Build and manage partnerships that strengthen execution.</p>
+          </div>
+          <div class="p-6 rounded-xl bg-white shadow hover:shadow-lg transition hover-raise hover-tint">
+            <h4 class="font-bold text-[--brand] mb-2">People Leadership & Management</h4>
+            <p class="text-l text-gray-600">Foster team growth and empower individuals for success.</p>
           </div>
         </div>
       </div>
@@ -212,6 +261,9 @@
             <span class="transition transform hover:scale-105 hover:brightness-110 bg-[#FF5722] text-white py-1 px-3 rounded-full text-sm">Email Marketing & ABM</span>
             <span class="transition transform hover:scale-105 hover:brightness-110 bg-[#9E9E9E] text-white py-1 px-3 rounded-full text-sm">Sales & Marketing Alignment</span>
             <span class="transition transform hover:scale-105 hover:brightness-110 bg-[#3D5AFE] text-white py-1 px-3 rounded-full text-sm">Project Management</span>
+            <span class="transition transform hover:scale-105 hover:brightness-110 bg-indigo-500 text-white py-1 px-3 rounded-full text-sm">People Leadership & Management</span>
+            <span class="transition transform hover:scale-105 hover:brightness-110 bg-cyan-500 text-white py-1 px-3 rounded-full text-sm">Outreach & Sequences</span>
+            <span class="transition transform hover:scale-105 hover:brightness-110 bg-emerald-500 text-white py-1 px-3 rounded-full text-sm">GTM Engineer</span>
           </div>
           <h3 class="text-xl font-bold text-[--brand] mb-4">Tools & Platforms</h3>
           <div class="flex flex-wrap justify-center gap-2">
@@ -303,6 +355,27 @@
         </div>
       </div>
     </section>
+    
+    <!-- Other Experiences Section -->
+    <section id="other-experiences" class="section-bleed-outer bg-gray-100 reveal">
+      <div class="container mx-auto max-w-7xl p-4 md:p-8 text-center">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-[#bc5090] mb-8">Additional Marketing & Leadership Highlights</h2>
+        <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto text-left">
+          <div class="bg-white rounded-xl shadow p-6 hover-raise hover-tint border-t-4 border-[--brand]">
+            <h3 class="text-lg font-bold text-[--brand] mb-2">Team Leadership</h3>
+            <p class="text-gray-700">Managed and mentored a high-performing telemarketing team to drive lead generation and customer engagement.</p>
+          </div>
+          <div class="bg-white rounded-xl shadow p-6 hover-raise hover-tint border-t-4 border-[--accent2]">
+            <h3 class="text-lg font-bold text-[--accent2] mb-2">Partner Program Management</h3>
+            <p class="text-gray-700">Oversaw the entire AWS Partner Program, managing competencies and administering Market Development Funds (MDF) to fuel collaborative growth initiatives.</p>
+          </div>
+          <div class="bg-white rounded-xl shadow p-6 hover-raise hover-tint border-t-4 border-[#ffa600]">
+            <h3 class="text-lg font-bold text-[#ffa600] mb-2">Sales & Marketing Alignment</h3>
+            <p class="text-gray-700">Strategically collaborated with sales teams to align on marketing objectives, ensuring seamless lead handoff and contributing to an increase in qualified sales opportunities.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Contact Section -->
     <section id="contact" class="section-bleed-outer bg-pink-50 reveal">
@@ -318,7 +391,7 @@
   </main>
   
   <div class="container mx-auto max-w-7xl p-4 md:p-8">
-    <footer class="text-center py-1 mt-12 text-gray-500 text-s reveal">© 2025 Ahmed Elposhi</footer>
+    <footer class="text-center py-1 mt-2 text-gray-500 text-s reveal">© 2025 Ahmed Elposhi</footer>
   </div>
   
   <script>
