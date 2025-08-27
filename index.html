@@ -14,7 +14,6 @@
 
     /* The section-bleed-outer class has been updated to be full width */
     .section-bleed-outer { background:#fff; padding:4rem 0; }
-    /* The separator line has been removed from this class */
 
     /* ===== Global Motion & Hover System (site‑wide) ===== */
     @keyframes gradientShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
@@ -31,9 +30,11 @@
 <body class="text-gray-900">
   <!-- Top bar - full width -->
   <div class='bg-gray-900 text-white text-sm text-center py-2'>Ahmed Elposhi | B2B Marketing Leader | IT, SaaS, Cloud</div>
-  <div class="container mx-auto max-w-7xl p-4 md:p-8">
-    <!-- Header / Hero -->
-    <header class="relative animate-gradient-slow bg-gradient-to-r from-[--brand] via-[--accent2] to-[--accent] text-white rounded-2xl overflow-hidden shadow-xl mb-20">
+  
+  <!-- Hero Section (Full Width) -->
+  <header class="relative animate-gradient-slow bg-gradient-to-r from-[--brand] via-[--accent2] to-[--accent] text-white rounded-2xl overflow-hidden shadow-xl mb-20">
+    <!-- Inner container to keep content centered -->
+    <div class="container mx-auto max-w-7xl px-4 md:px-8">
       <div class="absolute inset-0 bg-black/30"></div>
       <div class="relative z-10 flex flex-col items-center justify-center py-20 px-6 text-center">
         <!-- Photo and Title Section -->
@@ -51,9 +52,9 @@
           <a href="https://www.linkedin.com/in/ahmedelposhi/" target="_blank" class="btn-lift px-6 py-3 rounded-full bg-white text-[--brand] font-semibold shadow">Find me on LinkedIn</a>
         </div>
       </div>
-    </header>
-  </div>
-
+    </div>
+  </header>
+  
   <main class="space-y-20">
     <!-- KPI Summary Section -->
     <section id="summary-with-numbers" class="section-bleed-outer reveal">
