@@ -12,8 +12,8 @@
     :root { --brand:#7a5195; --accent:#ff764a; --accent2:#ef5675; }
     body { font-family: 'Inter', sans-serif; background:#f3f4f6 }
 
-    /* The section-bleed-outer class has been updated to be full width */
-    .section-bleed-outer { background:#fff; padding:4rem 0; }
+    /* The section-bleed-outer class is now just for padding and layout, with backgrounds applied per section */
+    .section-bleed-outer { padding:4rem 0; }
 
     /* ===== Global Motion & Hover System (site‑wide) ===== */
     @keyframes gradientShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
@@ -57,23 +57,23 @@
   
   <main class="space-y-20">
     <!-- KPI Summary Section -->
-    <section id="summary-with-numbers" class="section-bleed-outer reveal">
+    <section id="summary-with-numbers" class="section-bleed-outer bg-gray-100 reveal">
       <div class="container mx-auto max-w-7xl p-4 md:p-8 text-center">
         <h2 class="text-3xl md:text-4xl font-extrabold text-[--accent] mb-8">Numbers That Define My Career</h2>
         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-          <div class="rounded-2xl p-6 shadow-sm hover-raise hover-tint">
+          <div class="rounded-2xl p-6 bg-white shadow-sm hover-raise hover-tint">
             <p class="text-5xl font-black text-[#ffa600] leading-none">10+</p>
             <p class="mt-2 text-gray-700">Years of Strategic Experience</p>
           </div>
-          <div class="rounded-2xl p-6 shadow-sm hover-raise hover-tint">
+          <div class="rounded-2xl p-6 bg-white shadow-sm hover-raise hover-tint">
             <p class="text-5xl font-black text-[#bc5090] leading-none">3+</p>
             <p class="mt-2 text-gray-700">Saudi Arabia Market Experience</p>
           </div>
-          <div class="rounded-2xl p-6 shadow-sm hover-raise hover-tint">
+          <div class="rounded-2xl p-6 bg-white shadow-sm hover-raise hover-tint">
             <p class="text-5xl font-black text-[--brand] leading-none">25%</p>
             <p class="mt-2 text-gray-700">Increase in Pipeline</p>
           </div>
-          <div class="rounded-2xl p-6 shadow-sm hover-raise hover-tint">
+          <div class="rounded-2xl p-6 bg-white shadow-sm hover-raise hover-tint">
             <p class="text-5xl font-black text-[--accent2] leading-none">40%</p>
             <p class="mt-2 text-gray-700">Growth in Vendor Partnerships</p>
           </div>
@@ -82,11 +82,11 @@
     </section>
 
     <!-- Core Competencies Section -->
-    <section id="key-competencies" class="section-bleed-outer reveal">
+    <section id="key-competencies" class="section-bleed-outer bg-purple-50 reveal">
       <div class="container mx-auto max-w-7xl p-4 md:p-8 text-center">
         <h2 class="text-3xl md:text-4xl font-extrabold text-[--brand] mb-4">Core Marketing Competencies</h2>
         <p class="text-xl text-gray-600 mb-10 max-w-2xl mx-auto">A balanced skillset that blends strategic vision and tactical execution across critical B2B domains.</p>
-        <div class="bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-xl p-8 max-w-5xl mx-auto hover-raise hover-tint">
+        <div class="bg-white rounded-2xl shadow-xl p-8 max-w-5xl mx-auto hover-raise hover-tint">
           <div class="h-[420px] md:h-[460px]"><canvas id="competencyRadarChart"></canvas></div>
         </div>
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12 max-w-5xl mx-auto text-center">
@@ -123,7 +123,7 @@
     </section>
 
     <!-- Quantifiable Impact Section -->
-    <section id="quantifiable-impact" class="section-bleed-outer reveal">
+    <section id="quantifiable-impact" class="section-bleed-outer bg-orange-50 reveal">
       <div class="container mx-auto max-w-7xl p-4 md:p-8 text-center">
         <h2 class="text-3xl md:text-4xl font-extrabold text-[--accent] mb-6">Quantifiable Business Impact</h2>
         <div class="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto">
@@ -148,7 +148,7 @@
     </section>
 
     <!-- CloudTech Summit Section -->
-    <section id="cloudtech-summit" class="section-bleed-outer reveal">
+    <section id="cloudtech-summit" class="section-bleed-outer bg-pink-50 reveal">
       <div class="container mx-auto max-w-7xl p-4 md:p-8 text-center">
         <h2 class="text-3xl md:text-4xl font-extrabold text-[--accent2] mb-4">CloudTech Summit: A Two-Year Retrospective</h2>
         <p class="text-xl text-gray-600 max-w-2xl mx-auto mb-8">Egypt's premier cloud technology event, co-created with AWS.</p>
@@ -190,7 +190,7 @@
     </section>
 
     <!-- Skills & Tools Section -->
-    <section id="skills-tools" class="section-bleed-outer reveal">
+    <section id="skills-tools" class="section-bleed-outer bg-gray-100 reveal">
       <div class="container mx-auto max-w-7xl p-4 md:p-8 text-center">
         <h2 class="text-3xl md:text-4xl font-extrabold text-[#bc5090] mb-8">Skills & Technology Stack</h2>
         <div class="max-w-6xl mx-auto">
@@ -238,24 +238,24 @@
     </section>
 
     <!-- Career Journey Section -->
-    <section id="career-journey" class="section-bleed-outer reveal">
+    <section id="career-journey" class="section-bleed-outer bg-purple-50 reveal">
       <div class="container mx-auto max-w-7xl p-4 md:p-8 text-center">
         <h2 class="text-3xl md:text-4xl font-extrabold text-[--accent] mb-12">Career Journey & Key Milestones</h2>
         <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10">
           <div class="flex flex-col space-y-12">
-            <div class="bg-[#e7dff3] rounded-2xl p-8 shadow relative hover-raise hover-tint text-left">
+            <div class="bg-white rounded-2xl p-8 shadow relative hover-raise hover-tint text-left">
               <span class="absolute -top-3 -left-3 bg-[--accent] text-white w-10 h-10 flex items-center justify-center rounded-full font-bold">5</span>
               <h3 class="text-lg font-bold text-[--brand]">Marketing Manager (Apr 2024 – Present)</h3>
               <p class="text-gray-800 font-semibold">Alnafitha IT, Saudi Arabia (Hybrid)</p>
               <p class="text-sm text-gray-700">Lead integrated marketing and cross-channel campaigns acoss 10 business units to accelerate pipeline and revenue.</p>
             </div>
-            <div class="bg-[#e7dff3] rounded-2xl p-8 shadow relative hover-raise hover-tint text-left">
+            <div class="bg-white rounded-2xl p-8 shadow relative hover-raise hover-tint text-left">
               <span class="absolute -top-3 -left-3 bg-[--accent] text-white w-10 h-10 flex items-center justify-center rounded-full font-bold">4</span>
               <h3 class="text-lg font-bold text-[--brand]">Marketing Manager (May 2022 – Mar 2024)</h3>
               <p class="text-gray-800 font-semibold">FORTE CLOUD, Egypt</p>
               <p class="text-sm text-gray-700">Managed a team, led multi-channel campaigns, and organized large events.</p>
             </div>
-            <div class="bg-[#e7dff3] rounded-2xl p-8 shadow relative hover-raise hover-tint text-left">
+            <div class="bg-white rounded-2xl p-8 shadow relative hover-raise hover-tint text-left">
               <span class="absolute -top-3 -left-3 bg-[--accent] text-white w-10 h-10 flex items-center justify-center rounded-full font-bold">3</span>
               <h3 class="text-lg font-bold text-[--brand]">AWS Alliance & Marketing Lead (Mar 2018 – Apr 2022)</h3>
               <p class="text-gray-800 font-semibold">FORTE CLOUD, Egypt</p>
@@ -263,13 +263,13 @@
             </div>
           </div>
           <div class="flex flex-col space-y-12">
-            <div class="bg-[#e7dff3] rounded-2xl p-8 shadow relative hover-raise hover-tint text-left">
+            <div class="bg-white rounded-2xl p-8 shadow relative hover-raise hover-tint text-left">
               <span class="absolute -top-3 -left-3 bg-[--accent] text-white w-10 h-10 flex items-center justify-center rounded-full font-bold">2</span>
               <h3 class="text-lg font-bold text-[--brand]">Marketing & Business Devlopment (Apr 2017 – Feb 2018)</h3>
               <p class="text-gray-800 font-semibold">FORTE CLOUD, Egypt</p>
               <p class="text-sm text-gray-700">Opened channels and supported early GTM motions.</p>
             </div>
-            <div class="bg-[#e7dff3] rounded-2xl p-8 shadow relative hover-raise hover-tint text-left">
+            <div class="bg-white rounded-2xl p-8 shadow relative hover-raise hover-tint text-left">
               <span class="absolute -top-3 -left-3 bg-[--accent] text-white w-10 h-10 flex items-center justify-center rounded-full font-bold">1</span>
               <h3 class="text-lg font-bold text-[--brand]">Product Marketing & Development (Aug 2015 – Mar 2017)</h3>
               <p class="text-sm text-gray-700">Transitioned from technical to business; focused on positioning & launch.</p>
@@ -280,7 +280,7 @@
     </section>
 
     <!-- Education & Certifications Section -->
-    <section id="education-certifications" class="section-bleed-outer reveal">
+    <section id="education-certifications" class="section-bleed-outer bg-orange-50 reveal">
       <div class="container mx-auto max-w-7xl p-4 md:p-8 text-center">
         <h2 class="text-3xl md:text-4xl font-extrabold text-[--accent] mb-8">Education & Credentials</h2>
         <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
@@ -305,7 +305,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="section-bleed-outer reveal">
+    <section id="contact" class="section-bleed-outer bg-pink-50 reveal">
       <div class="container mx-auto max-w-7xl p-4 md:p-8 text-center">
         <h2 class="text-3xl md:text-4xl font-extrabold text-[--brand] mb-4">Ready to Hire Me?</h2>
         <p class="text-xl text-gray-700 mb-6 max-w-2xl mx-auto">I drive business growth by applying my expertise. Let's connect to discuss how I can contribute to your team.</p>
@@ -318,7 +318,7 @@
   </main>
   
   <div class="container mx-auto max-w-7xl p-4 md:p-8">
-    <footer class="text-center py-3 mt-12 text-gray-500 text-s reveal">© 2025 Ahmed Elposhi</footer>
+    <footer class="text-center py-1 mt-12 text-gray-500 text-s reveal">© 2025 Ahmed Elposhi</footer>
   </div>
   
   <script>
