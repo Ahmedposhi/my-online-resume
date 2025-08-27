@@ -26,12 +26,19 @@
     .btn-lift{transition:transform .2s ease, box-shadow .2s ease}
     .btn-lift:hover{transform:translateY(-3px); box-shadow:0 14px 28px -14px rgba(0,0,0,.35)}
 
-    /* Custom styles for the mind map section */
-    .mind-map-node {
-      @apply bg-white rounded-xl shadow p-4 text-center hover-raise hover-tint border border-gray-200;
+    /* Specific styles for the skill badges to match the image */
+    .skill-badge {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      border-radius: 9999px; /* rounded-full */
+      margin: 0.25rem; /* m-1 */
+      font-weight: 500;
+      color: white;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
-    .mind-map-title {
-      @apply text-lg font-semibold text-[--brand];
+    .skill-badge:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     }
   </style>
 </head>
@@ -172,7 +179,7 @@
     </section>
 
     <!-- Quantifiable Impact Section -->
-    <section id="quantifiable-impact" class="section-bleed-outer bg-orange-50 reveal">
+    <section id="quantifiable-impact" class="section-bleed-outer bg-gray-100 reveal">
       <div class="container mx-auto max-w-7xl p-4 md:p-8 text-center">
         <h2 class="text-3xl md:text-4xl font-extrabold text-[--accent] mb-6">Quantifiable Business Impact</h2>
         <div class="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto">
@@ -197,7 +204,7 @@
     </section>
 
     <!-- CloudTech Summit Section -->
-    <section id="cloudtech-summit" class="section-bleed-outer bg-pink-50 reveal">
+    <section id="cloudtech-summit" class="section-bleed-outer bg-purple-50 reveal">
       <div class="container mx-auto max-w-7xl p-4 md:p-8 text-center">
         <h2 class="text-3xl md:text-4xl font-extrabold text-[--accent2] mb-4">CloudTech Summit: A Two-Year Retrospective</h2>
         <p class="text-xl text-gray-600 max-w-2xl mx-auto mb-8">Egypt's premier cloud technology event, co-created with AWS.</p>
@@ -233,59 +240,6 @@
           <div class="p-6 bg-white rounded-2xl shadow hover:shadow-lg transition hover-raise hover-tint border-t-4 border-[#bc5090] text-left">
             <h4 class="font-bold text-[#bc5090] mb-2">⭐ Impactful Results</h4>
             <p class="text-gray-700 text-l">The event's success in attracting high-quality registrants (1200+ in 2023) and converting them to attendees showcased my skills in demand generation, lead nurturing, and event promotion.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Skills & Tools Section -->
-    <section id="skills-tools" class="section-bleed-outer bg-gray-100 reveal">
-      <div class="container mx-auto max-w-7xl p-4 md:p-8 text-center">
-        <h2 class="text-3xl md:text-4xl font-extrabold text-[#bc5090] mb-8">Skills & Technology Stack</h2>
-        <div class="max-w-6xl mx-auto">
-          <p class="text-xl text-gray-700 mb-10">Expertise across modern marketing domains, platforms, and tools.</p>
-          <h3 class="text-xl font-bold text-[--brand] mb-4">Core Skills</h3>
-          <div class="flex flex-wrap justify-center gap-2 mb-8">
-            <span class="transition transform hover:scale-105 hover:brightness-110 bg-[#ffa600] text-white py-1 px-3 rounded-full text-sm">Event Marketing & Management</span>
-            <span class="transition transform hover:scale-105 hover:brightness-110 bg-[#bc5090] text-white py-1 px-3 rounded-full text-sm">Lead Generation & Conversion Optimization</span>
-            <span class="transition transform hover:scale-105 hover:brightness-110 bg-[#ef5675] text-white py-1 px-3 rounded-full text-sm">Go-to-Market (GTM) Strategy</span>
-            <span class="transition transform hover:scale-105 hover:brightness-110 bg-[#ff764a] text-white py-1 px-3 rounded-full text-sm">SEO / SEM</span>
-            <span class="transition transform hover:scale-105 hover:brightness-110 bg-[#7a5195] text-white py-1 px-3 rounded-full text-sm">Regional Planning</span>
-            <span class="transition transform hover:scale-105 hover:brightness-110 bg-[#4CAF50] text-white py-1 px-3 rounded-full text-sm">Content Strategy & Creation</span>
-            <span class="transition transform hover:scale-105 hover:brightness-110 bg-[#2196F3] text-white py-1 px-3 rounded-full text-sm">Marketing Automation</span>
-            <span class="transition transform hover:scale-105 hover:brightness-110 bg-[#FFC107] text-white py-1 px-3 rounded-full text-sm">CRM Integration & Management</span>
-            <span class="transition transform hover:scale-105 hover:brightness-110 bg-[#673AB7] text-white py-1 px-3 rounded-full text-sm">Cross-Channel Campaigns</span>
-            <span class="transition transform hover:scale-105 hover:brightness-110 bg-[#9C27B0] text-white py-1 px-3 rounded-full text-sm">Vendor & Partner Management</span>
-            <span class="transition transform hover:scale-105 hover:brightness-110 bg-[#E91E63] text-white py-1 px-3 rounded-full text-sm">Data-Driven Marketing & Analytics</span>
-            <span class="transition transform hover:scale-105 hover:brightness-110 bg-[#009688] text-white py-1 px-3 rounded-full text-sm">Demand Generation</span>
-            <span class="transition transform hover:scale-105 hover:brightness-110 bg-[#FF5722] text-white py-1 px-3 rounded-full text-sm">Email Marketing & ABM</span>
-            <span class="transition transform hover:scale-105 hover:brightness-110 bg-[#9E9E9E] text-white py-1 px-3 rounded-full text-sm">Sales & Marketing Alignment</span>
-            <span class="transition transform hover:scale-105 hover:brightness-110 bg-[#3D5AFE] text-white py-1 px-3 rounded-full text-sm">Project Management</span>
-            <span class="transition transform hover:scale-105 hover:brightness-110 bg-indigo-500 text-white py-1 px-3 rounded-full text-sm">People Leadership & Management</span>
-            <span class="transition transform hover:scale-105 hover:brightness-110 bg-cyan-500 text-white py-1 px-3 rounded-full text-sm">Outreach & Sequences</span>
-            <span class="transition transform hover:scale-105 hover:brightness-110 bg-emerald-500 text-white py-1 px-3 rounded-full text-sm">GTM Engineer</span>
-            <span class="transition transform hover:scale-105 hover:brightness-110 bg-teal-500 text-white py-1 px-3 rounded-full text-sm">Generative AI</span>
-          </div>
-          <h3 class="text-xl font-bold text-[--brand] mb-4">Tools & Platforms</h3>
-          <div class="flex flex-wrap justify-center gap-2">
-            <span class="transition transform hover:scale-105 hover:brightness-110 bg-[#ff764a] text-white py-1 px-3 rounded-full text-sm">Salesforce</span>
-            <span class="transition transform hover:scale-105 hover:brightness-110 bg-[#ffa600] text-white py-1 px-3 rounded-full text-sm">HubSpot</span>
-            <span class="transition transform hover:scale-105 hover:brightness-110 bg-[#ef5675] text-white py-1 px-3 rounded-full text-sm">Microsoft D365</span>
-            <span class="transition transform hover:scale-105 hover:brightness-110 bg-[#ff764a] text-white py-1 px-3 rounded-full text-sm">Zoho CRM</span>
-            <span class="transition transform hover:scale-105 hover:brightness-110 bg-[#bc5090] text-white py-1 px-3 rounded-full text-sm">Google Analytics</span>
-            <span class="transition transform hover:scale-105 hover:brightness-110 bg-[#7a5195] text-white py-1 px-3 rounded-full text-sm">HubSpot Analytics</span>
-            <span class="transition transform hover:scale-105 hover:brightness-110 bg-[#4CAF50] text-white py-1 px-3 rounded-full text-sm">Zoho PageSense</span>
-            <span class="transition transform hover:scale-105 hover:brightness-110 bg-[#2196F3] text-white py-1 px-3 rounded-full text-sm">Asana</span>
-            <span class="transition transform hover:scale-105 hover:brightness-110 bg-[#FFC107] text-white py-1 px-3 rounded-full text-sm">Trello</span>
-            <span class="transition transform hover:scale-105 hover:brightness-110 bg-[#673AB7] text-white py-1 px-3 rounded-full text-sm">ClickUp</span>
-            <span class="transition transform hover:scale-105 hover:brightness-110 bg-[#9C27B0] text-white py-1 px-3 rounded-full text-sm">Mailchimp</span>
-            <span class="transition transform hover:scale-105 hover:brightness-110 bg-[#E91E63] text-white py-1 px-3 rounded-full text-sm">Zoho Campaigns</span>
-            <span class="transition transform hover:scale-105 hover:brightness-110 bg-[#009688] text-white py-1 px-3 rounded-full text-sm">Build Custom GPT</span>
-            <span class="transition transform hover:scale-105 hover:brightness-110 bg-[#FF5722] text-white py-1 px-3 rounded-full text-sm">WordPress</span>
-            <span class="transition transform hover:scale-105 hover:brightness-110 bg-[#9E9E9E] text-white py-1 px-3 rounded-full text-sm">Drupal</span>
-            <span class="transition transform hover:scale-105 hover:brightness-110 bg-[#3D5AFE] text-white py-1 px-3 rounded-full text-sm">Wix</span>
-            <span class="transition transform hover:scale-105 hover:brightness-110 bg-[#E040FB] text-white py-1 px-3 rounded-full text-sm">LinkedIn Ads</span>
-            <span class="transition transform hover:scale-105 hover:brightness-110 bg-[#FF8A65] text-white py-1 px-3 rounded-full text-sm">Google Ads</span>
           </div>
         </div>
       </div>
@@ -356,6 +310,89 @@
         </div>
       </div>
     </section>
+
+    <!-- Marketing Automation Section -->
+    <section id="marketing-automation" class="section-bleed-outer bg-gray-100 reveal">
+      <div class="container mx-auto max-w-7xl p-4 md:p-8 text-center">
+        <div class="max-w-5xl mx-auto bg-white rounded-2xl shadow-xl p-8 hover-raise hover-tint">
+          <h2 class="text-3xl md:text-4xl font-extrabold text-[--brand] mb-4">The Architect of Efficiency: Marketing Automation Expertise</h2>
+          <p class="text-lg text-gray-700 mb-8 max-w-3xl mx-auto">For me, marketing automation is a strategic advantage. It's about building efficient, scalable systems that handle lead management and customer journeys, freeing up time for big-picture strategy and creative work. This approach allows me to drive measurable growth and scale campaigns while focusing on impactful storytelling and building real relationships.</p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 text-center mt-6">
+            <div class="p-4 bg-gray-50 rounded-lg shadow-sm hover:bg-gray-100 transition duration-300 ease-in-out">
+                <span class="text-3xl block mb-2 text-[--accent]">🚀</span>
+                <p class="font-semibold text-lg">Scalable Systems</p>
+            </div>
+            <div class="p-4 bg-gray-50 rounded-lg shadow-sm hover:bg-gray-100 transition duration-300 ease-in-out">
+                <span class="text-3xl block mb-2 text-[--accent]">🎯</span>
+                <p class="font-semibold text-lg">Lead Nurturing</p>
+            </div>
+            <div class="p-4 bg-gray-50 rounded-lg shadow-sm hover:bg-gray-100 transition duration-300 ease-in-out">
+                <span class="text-3xl block mb-2 text-[--accent]">🔗</span>
+                <p class="font-semibold text-lg">CRM Integration</p>
+            </div>
+            <div class="p-4 bg-gray-50 rounded-lg shadow-sm hover:bg-gray-100 transition duration-300 ease-in-out">
+                <span class="text-3xl block mb-2 text-[--accent]">📊</span>
+                <p class="font-semibold text-lg">Data-Driven Reporting</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills & Technology Stack Section -->
+    <section id="skills-stack" class="section-bleed-outer bg-purple-50 reveal">
+      <div class="container mx-auto max-w-7xl p-4 md:p-8 text-center">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-[--brand] mb-8">Skills & Technology Stack</h2>
+        <p class="text-lg text-gray-700 mb-10 max-w-4xl mx-auto">Expertise across modern marketing domains, platforms, and tools.</p>
+        
+        <div class="max-w-5xl mx-auto mb-10">
+          <h3 class="text-2xl font-bold text-gray-700 mb-4">Core Skills</h3>
+          <div class="flex flex-wrap items-center justify-center">
+            <span class="skill-badge bg-[#764893]">Event Marketing & Management</span>
+            <span class="skill-badge bg-[#764893]">Lead Generation & Conversion Optimization</span>
+            <span class="skill-badge bg-[#764893]">Go-to-Market (GTM) Strategy</span>
+            <span class="skill-badge bg-[#764893]">SEO / SEM</span>
+            <span class="skill-badge bg-[#764893]">Regional Planning</span>
+            <span class="skill-badge bg-[#764893]">Content Strategy & Creation</span>
+            <span class="skill-badge bg-[#764893]">Marketing Automation</span>
+            <span class="skill-badge bg-[#764893]">CRM Integration & Management</span>
+            <span class="skill-badge bg-[#764893]">Cross-Channel Campaigns</span>
+            <span class="skill-badge bg-[#764893]">Vendor & Partner Management</span>
+            <span class="skill-badge bg-[#764893]">Data-Driven Marketing & Analytics</span>
+            <span class="skill-badge bg-[#764893]">Demand Generation</span>
+            <span class="skill-badge bg-[#764893]">Email Marketing & ABM</span>
+            <span class="skill-badge bg-[#764893]">Project Management</span>
+            <span class="skill-badge bg-[#764893]">People Leadership & Management</span>
+            <span class="skill-badge bg-[#764893]">Outreach & Sequences</span>
+            <span class="skill-badge bg-[#764893]">GTM Engineer</span>
+            <span class="skill-badge bg-[#764893]">Generative AI</span>
+          </div>
+        </div>
+
+        <div class="max-w-5xl mx-auto">
+          <h3 class="text-2xl font-bold text-gray-700 mb-4">Tools & Platforms</h3>
+          <div class="flex flex-wrap items-center justify-center">
+            <span class="skill-badge bg-[#ca4a7e]">Salesforce</span>
+            <span class="skill-badge bg-[#ca4a7e]">HubSpot</span>
+            <span class="skill-badge bg-[#ca4a7e]">Microsoft D365</span>
+            <span class="skill-badge bg-[#ca4a7e]">Google Analytics</span>
+            <span class="skill-badge bg-[#ca4a7e]">HubSpot Analytics</span>
+            <span class="skill-badge bg-[#ca4a7e]">Zoho PageSense</span>
+            <span class="skill-badge bg-[#ca4a7e]">Asana</span>
+            <span class="skill-badge bg-[#ca4a7e]">Trello</span>
+            <span class="skill-badge bg-[#ca4a7e]">ClickUp</span>
+            <span class="skill-badge bg-[#ca4a7e]">Mailchimp</span>
+            <span class="skill-badge bg-[#ca4a7e]">Zoho Campaigns</span>
+            <span class="skill-badge bg-[#ca4a7e]">Build Custom GPT</span>
+            <span class="skill-badge bg-[#ca4a7e]">WordPress</span>
+            <span class="skill-badge bg-[#ca4a7e]">Drupal</span>
+            <span class="skill-badge bg-[#ca4a7e]">Wix</span>
+            <span class="skill-badge bg-[#ca4a7e]">LinkedIn Ads</span>
+            <span class="skill-badge bg-[#ca4a7e]">Google Ads</span>
+          </div>
+        </div>
+      </div>
+    </section>
     
     <!-- Other Experiences Section -->
     <section id="other-experiences" class="section-bleed-outer bg-gray-100 reveal">
@@ -377,7 +414,6 @@
         </div>
       </div>
     </section>
-
     <!-- Contact Section -->
     <section id="contact" class="section-bleed-outer bg-pink-50 reveal">
       <div class="container mx-auto max-w-7xl p-4 md:p-8 text-center">
