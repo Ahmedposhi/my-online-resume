@@ -1,468 +1,309 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ahmed Elposhi - B2B Marketing Leader</title>
-    <!-- Use Tailwind CSS for rapid styling, a common practice for clean, responsive designs. -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Include the Inter font for a modern, professional look. -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap">
-    <!-- Include Chart.js library for rendering the radar chart. -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <style>
-        /* Apply a global font family and background color */
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f3f4f6;
-        }
-
-        /* Chart container styling to ensure it's responsive on all devices */
-        .chart-container {
-            position: relative;
-            height: 450px;
-        }
-
-        /* Styling for the timeline to create a clean visual flow */
-        .timeline {
-            position: relative;
-        }
-
-        .timeline:before {
-            content: '';
-            position: absolute;
-            left: 1rem;
-            top: 0;
-            bottom: 0;
-            width: 4px;
-            background: #d1d5db;
-        }
-
-        /* Adjust the timeline line for larger screens */
-        @media (min-width: 768px) {
-            .timeline:before {
-                left: 2rem;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ahmed Elposhi - B2B Marketing Leader</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body { font-family: 'Inter', sans-serif; background-color: #f3f4f6; }
+  </style>
 </head>
 <body class="bg-gray-100 min-h-screen">
+  <div class="container mx-auto max-w-7xl p-4 md:p-8">
+    <!-- Header -->
+    <header class="text-center mb-16">
+      <img src="LinkedIn-PP (1) (1).png" alt="Ahmed Elposhi – Profile Photo" class="w-40 h-40 rounded-full mx-auto shadow-md mb-4 object-cover transition-transform duration-300 hover:scale-105 border-4 border-[#7a5195]" />
+      <h1 class="text-4xl md:text-5xl font-extrabold text-[#7a5195] mb-2">B2B Marketing Leadership: A Career in Focus</h1>
+      <p class="text-lg text-gray-600 max-w-3xl mx-auto">A proven marketing leader accelerating pipeline and revenue in the IT, SaaS, and Cloud sectors, with a strong focus on the Saudi and Middle East markets.</p>
+    </header>
 
-    <!-- Main container to set a fixed width and center the content -->
-    <div class="container mx-auto max-w-7xl p-4 md:p-8">
+    <main class="space-y-12">
+      <!-- Summary (full-width white) -->
+      <section id="summary-with-numbers" class="bg-white -mx-4 md:-mx-8 px-4 md:px-8 py-10">
+        <h2 class="text-2xl md:text-3xl font-bold text-[#ff764a] mb-6 text-center">Numbers That Define My Career</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-6">
+          <div>
+            <p class="text-5xl font-extrabold text-[#ffa600]">10+</p>
+            <p class="text-lg text-gray-700">Years of Strategic Experience</p>
+          </div>
+          <div>
+            <p class="text-5xl font-extrabold text-[#bc5090]">3+</p>
+            <p class="text-lg text-gray-700">Saudi Arabia Market Experience</p>
+          </div>
+          <div>
+            <p class="text-5xl font-extrabold text-[#7a5195]">25%</p>
+            <p class="text-lg text-gray-700">Increase in Pipeline</p>
+          </div>
+          <div>
+            <p class="text-5xl font-extrabold text-[#ef5675]">30%</p>
+            <p class="text-lg text-gray-700">Increase in Website Traffic</p>
+          </div>
+        </div>
+      </section>
 
-        <!-- Header Section -->
-        <header class="text-center mb-12">
-            <!-- Profile image with a placeholder URL. Note: The text is now 'Ahmed E.' -->
-            <img
-                src="https://placehold.co/128x128/f3f4f6/334155?text=Ahmed+E."
-                alt="Profile Photo"
-                class="w-32 h-32 rounded-full mx-auto shadow-md mb-4 object-cover transition-transform duration-300 hover:scale-105"
-            />
-            <h1 class="text-4xl md:text-5xl font-extrabold text-[#7a5195] mb-2">B2B Marketing Leadership: A Career in Focus</h1>
-            <p class="text-lg text-gray-600 max-w-3xl mx-auto">A proven marketing leader accelerating pipeline and revenue in the IT, SaaS, and Cloud sectors, with a strong focus on the Saudi and Middle East markets.</p>
-        </header>
+      <!-- Core Competencies (full-width white) -->
+      <section id="key-competencies" class="bg-white -mx-4 md:-mx-8 px-4 md:px-8 py-10">
+        <h2 class="text-2xl font-bold text-[#7a5195] mb-4 text-center">Core Marketing Competencies</h2>
+        <p class="text-gray-600 mb-6 text-center">My expertise is built on a foundation of strategic vision and tactical execution across the most critical B2B marketing domains.</p>
+        <div class="chart-container h-[420px] md:h-[460px]">
+          <canvas id="competencyRadarChart"></canvas>
+        </div>
+      </section>
 
-        <main class="space-y-12">
+      <!-- Quantifiable Impact (full-width white) -->
+      <section id="quantifiable-impact" class="bg-white -mx-4 md:-mx-8 px-4 md:px-8 py-10">
+        <h2 class="text-2xl font-bold text-[#ff764a] mb-6 text-center">Quantifiable Business Impact</h2>
+        <div class="space-y-6 max-w-5xl mx-auto">
+          <div class="flex items-start bg-[#fdecd5] rounded-lg p-4 transition-all duration-300 hover:scale-[1.02]">
+            <div class="flex-shrink-0 text-3xl font-extrabold text-[#ffa600] mr-4">+25%</div>
+            <p class="text-gray-700 font-medium">At Alnafitha IT, I developed and executed integrated marketing strategies that drove a 25% increase in lead generation within the first year.</p>
+          </div>
+          <div class="flex items-start bg-[#e7dff3] rounded-lg p-4 transition-all duration-300 hover:scale-[1.02]">
+            <div class="flex-shrink-0 text-3xl font-extrabold text-[#7a5195] mr-4">+30%</div>
+            <p class="text-gray-700 font-medium">I boosted website traffic by 30% through spearheading targeted SEO, SEM, and email campaigns.</p>
+          </div>
+          <div class="flex items-start bg-[#fce4eb] rounded-lg p-4 transition-all duration-300 hover:scale-[1.02]">
+            <div class="flex-shrink-0 text-3xl font-extrabold text-[#ef5675] mr-4">+30%</div>
+            <p class="text-gray-700 font-medium">I increased event participation by 30% by strategically planning and executing cross-channel marketing campaigns.</p>
+          </div>
+          <div class="flex items-start bg-[#e0f7f2] rounded-lg p-4 transition-all duration-300 hover:scale-[1.02]">
+            <div class="flex-shrink-0 text-3xl font-extrabold text-[#00bcd4] mr-4">+35%</div>
+            <p class="text-gray-700 font-medium">As AWS Alliance Lead, I drove a 35% increase in cloud service adoption through targeted webinars and digital content campaigns.</p>
+          </div>
+        </div>
+      </section>
 
-            <!-- Summary with Numbers Section -->
-            <section id="summary-with-numbers" class="bg-white rounded-lg shadow-lg p-8 text-center transition-all duration-300 hover:shadow-xl hover:scale-[1.01]">
-                <h2 class="text-2xl md:text-3xl font-bold text-[#ff764a] mb-4">Numbers That Define My Career</h2>
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-6">
-                    <div>
-                        <p class="text-5xl font-extrabold text-[#ffa600]">10+</p>
-                        <p class="text-lg text-gray-700">Years of Strategic Experience</p>
-                    </div>
-                    <div>
-                        <p class="text-5xl font-extrabold text-[#bc5090]">3+</p>
-                        <p class="text-lg text-gray-700">Saudi Arabia Market Experience</p>
-                    </div>
-                    <div>
-                        <p class="text-5xl font-extrabold text-[#7a5195]">25%</p>
-                        <p class="text-lg text-gray-700">Increase in Pipeline</p>
-                    </div>
-                    <div>
-                        <p class="text-5xl font-extrabold text-[#ef5675]">30%</p>
-                        <p class="text-lg text-gray-700">Increase in Website Traffic</p>
-                    </div>
-                </div>
-            </section>
+      <!-- CloudTech Summit (full-width white) -->
+      <section id="cloudtech-summit" class="bg-white -mx-4 md:-mx-8 px-4 md:px-8 py-10">
+        <h2 class="text-2xl font-bold text-[#ef5675] mb-4 text-center">CloudTech Summit: A Two-Year Retrospective</h2>
+        <p class="text-gray-600 mb-8 text-center max-w-2xl mx-auto">A look at the growth and success of Egypt's premier cloud technology event, co-created with AWS, and its impact on the region.</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+          <div class="bg-[#fdecd5] rounded-lg p-6 transition-all duration-300 hover:scale-105">
+            <h3 class="text-xl font-bold text-[#000000] mb-2">CloudTech Summit 2022</h3>
+            <p class="text-sm text-gray-600 mb-4">Registrants: 800+<br/>Attendees: 250+<br/>Vendors: 1 (AWS)<br/>Sponsors: 1</p>
+            <div class="mt-4">
+              <a href="https://fortecloud.com/cloudtech-summit-egypt2022/" target="_blank" rel="noopener noreferrer" class="bg-[#bc5090] text-white py-2 px-4 rounded-full font-bold text-sm hover:bg-[#a5427d] transition-colors">View 2022 Summit</a>
+            </div>
+          </div>
+          <div class="bg-[#e7dff3] rounded-lg p-6 transition-all duration-300 hover:scale-105">
+            <h3 class="text-xl font-bold text-[#7a5195] mb-2">CloudTech Summit 2023</h3>
+            <p class="text-sm text-gray-600 mb-4">Registrants: 1800+<br/>Attendees: 700+<br/>Vendors: 5+ (AWS, TrendMicro, AMD, Opentext, Gensys, others)<br/>Sponsors: 6+</p>
+            <div class="mt-4">
+              <a href="https://fortecloud.com/cloudtech-summit-egypt-2023-aws/" target="_blank" rel="noopener noreferrer" class="bg-[#bc5090] text-white py-2 px-4 rounded-full font-bold text-sm hover:bg-[#a5427d] transition-colors">View 2023 Summit</a>
+            </div>
+          </div>
+        </div>
+        <div class="mt-8 space-y-6">
+          <h3 class="text-xl font-bold text-[#ff764a] mb-2">Key Highlights of My Leadership:</h3>
+          <div class="bg-gray-50 rounded-lg p-4 transition-all duration-300 hover:shadow-md hover:bg-gray-100"><p class="text-gray-700 font-medium"><span class="font-bold text-[#7a5195]">Strategic Vision:</span> As the co-creator and organizer, I orchestrated the strategic planning and execution of this regional event, establishing it as a must-attend for Egypt's tech community.</p></div>
+          <div class="bg-gray-50 rounded-lg p-4 transition-all duration-300 hover:shadow-md hover:bg-gray-100"><p class="text-gray-700 font-medium"><span class="font-bold text-[#ff764a]">Exponential Growth:</span> I drove a significant increase in attendance and vendor participation, with the number of attendees growing from 250+ in 2022 to over 700+ in 2023.</p></div>
+          <div class="bg-gray-50 rounded-lg p-4 transition-all duration-300 hover:shadow-md hover:bg-gray-100"><p class="text-gray-700 font-medium"><span class="font-bold text-[#ef5675]">Ecosystem Development:</span> Expanded the vendor ecosystem from one partner (AWS) to 5+ vendors and 6+ sponsors.</p></div>
+          <div class="bg-gray-50 rounded-lg p-4 transition-all duration-300 hover:shadow-md hover:bg-gray-100"><p class="text-gray-700 font-medium"><span class="font-bold text-[#bc5090]">Impactful Results:</span> 1800+ registrants in 2023, strong conversion to attendees.</p></div>
+        </div>
+      </section>
 
-            <!-- Core Competencies Section with Radar Chart -->
-            <section id="key-competencies" class="bg-white rounded-lg shadow-lg p-6 transition-all duration-300 hover:shadow-xl hover:scale-[1.01]">
-                <h2 class="text-2xl font-bold text-[#7a5195] mb-4 text-center">Core Marketing Competencies</h2>
-                <p class="text-gray-600 mb-6 text-center">My expertise is built on a foundation of strategic vision and tactical execution across the most critical B2B marketing domains.</p>
-                <div class="chart-container">
-                    <canvas id="competencyRadarChart"></canvas>
-                </div>
-            </section>
+      <!-- Skills & Tools (full-width white) -->
+      <section id="skills-tools" class="bg-white -mx-4 md:-mx-8 px-4 md:px-8 py-10">
+        <h2 class="text-2xl font-bold text-[#bc5090] mb-4 text-center">Skills & Technology Stack</h2>
+        <div class="flex flex-wrap gap-2 justify-center"> 
+          <span class="bg-[#ffa600] text-white py-1 px-3 rounded-full text-sm">Event Marketing & Management</span>
+          <span class="bg-[#bc5090] text-white py-1 px-3 rounded-full text-sm">Lead Generation & Conversion Optimization</span>
+          <span class="bg-[#ef5675] text-white py-1 px-3 rounded-full text-sm">Go-to-Market (GTM) Strategy</span>
+          <span class="bg-[#ff764a] text-white py-1 px-3 rounded-full text-sm">SEO/SEM</span>
+          <span class="bg-[#7a5195] text-white py-1 px-3 rounded-full text-sm">Regional Planning</span>
+          <span class="bg-[#4CAF50] text-white py-1 px-3 rounded-full text-sm">Content Strategy & Creation</span>
+          <span class="bg-[#2196F3] text-white py-1 px-3 rounded-full text-sm">Marketing Automation</span>
+          <span class="bg-[#FFC107] text-white py-1 px-3 rounded-full text-sm">CRM Integration & Management</span>
+          <span class="bg-[#673AB7] text-white py-1 px-3 rounded-full text-sm">Cross-Channel & Integrated Campaigns</span>
+          <span class="bg-[#9C27B0] text-white py-1 px-3 rounded-full text-sm">Vendor & Partner Relationship Management</span>
+          <span class="bg-[#E91E63] text-white py-1 px-3 rounded-full text-sm">Data-Driven Marketing & Analytics</span>
+          <span class="bg-[#009688] text-white py-1 px-3 rounded-full text-sm">Demand Generation</span>
+          <span class="bg-[#FF5722] text-white py-1 px-3 rounded-full text-sm">Email Marketing & ABM</span>
+          <span class="bg-[#9E9E9E] text-white py-1 px-3 rounded-full text-sm">Sales & Marketing Alignment</span>
+          <span class="bg-[#3D5AFE] text-white py-1 px-3 rounded-full text-sm">Project Management</span>
+        </div>
+        <h3 class="text-xl font-bold text-[#7a5195] mb-2 mt-6 text-center">Tools & Platforms</h3>
+        <div class="flex flex-wrap gap-2 justify-center">
+          <span class="bg-[#ff764a] text-white py-1 px-3 rounded-full text-sm">Salesforce</span>
+          <span class="bg-[#ffa600] text-white py-1 px-3 rounded-full text-sm">HubSpot</span>
+          <span class="bg-[#ef5675] text-white py-1 px-3 rounded-full text-sm">Microsoft Dynamics</span>
+          <span class="bg-[#bc5090] text-white py-1 px-3 rounded-full text-sm">Google Analytics</span>
+          <span class="bg-[#7a5195] text-white py-1 px-3 rounded-full text-sm">HubSpot Analytics</span>
+          <span class="bg-[#4CAF50] text-white py-1 px-3 rounded-full text-sm">Zoho PageSense</span>
+          <span class="bg-[#2196F3] text-white py-1 px-3 rounded-full text-sm">Asana</span>
+          <span class="bg-[#FFC107] text-white py-1 px-3 rounded-full text-sm">Trello</span>
+          <span class="bg-[#673AB7] text-white py-1 px-3 rounded-full text-sm">Clickup</span>
+          <span class="bg-[#9C27B0] text-white py-1 px-3 rounded-full text-sm">Mailchimp</span>
+          <span class="bg-[#E91E63] text-white py-1 px-3 rounded-full text-sm">Zoho Campaigns</span>
+          <span class="bg-[#009688] text-white py-1 px-3 rounded-full text-sm">Build Custom GPT</span>
+          <span class="bg-[#FF5722] text-white py-1 px-3 rounded-full text-sm">WordPress</span>
+          <span class="bg-[#9E9E9E] text-white py-1 px-3 rounded-full text-sm">Drupal</span>
+          <span class="bg-[#3D5AFE] text-white py-1 px-3 rounded-full text-sm">Wix</span>
+          <span class="bg-[#E040FB] text-white py-1 px-3 rounded-full text-sm">LinkedIn Ads</span>
+          <span class="bg-[#FF8A65] text-white py-1 px-3 rounded-full text-sm">Google Ads</span>
+        </div>
+      </section>
 
-            <!-- Quantifiable Impact Section (Active Voice) -->
-            <section id="quantifiable-impact" class="bg-white rounded-lg shadow-lg p-6 transition-all duration-300 hover:shadow-xl hover:scale-[1.01]">
-                <h2 class="text-2xl font-bold text-[#ff764a] mb-6 text-center">Quantifiable Business Impact</h2>
-                <div class="space-y-6">
-                    <div class="flex items-start bg-[#fdecd5] rounded-lg p-4 transition-all duration-300 hover:scale-[1.02]">
-                        <div class="flex-shrink-0 text-3xl font-extrabold text-[#ffa600] mr-4">
-                            +25%
-                        </div>
-                        <p class="text-gray-700 font-medium">At Alnafitha IT, I developed and executed integrated marketing strategies that drove a 25% increase in lead generation within the first year.</p>
-                    </div>
-                    <div class="flex items-start bg-[#e7dff3] rounded-lg p-4 transition-all duration-300 hover:scale-[1.02]">
-                        <div class="flex-shrink-0 text-3xl font-extrabold text-[#7a5195] mr-4">
-                            +30%
-                        </div>
-                        <p class="text-gray-700 font-medium">I boosted website traffic by 30% through spearheading targeted SEO, SEM, and email campaigns.</p>
-                    </div>
-                    <div class="flex items-start bg-[#fce4eb] rounded-lg p-4 transition-all duration-300 hover:scale-[1.02]">
-                        <div class="flex-shrink-0 text-3xl font-extrabold text-[#ef5675] mr-4">
-                            +30%
-                        </div>
-                        <p class="text-gray-700 font-medium">I increased event participation by 30% by strategically planning and executing cross-channel marketing campaigns.</p>
-                    </div>
-                    <div class="flex items-start bg-[#e0f7f2] rounded-lg p-4 transition-all duration-300 hover:scale-[1.02]">
-                        <div class="flex-shrink-0 text-3xl font-extrabold text-[#00bcd4] mr-4">
-                            +35%
-                        </div>
-                        <p class="text-gray-700 font-medium">As AWS Alliance Lead, I drove a 35% increase in cloud service adoption through targeted webinars and digital content campaigns.</p>
-                    </div>
-                </div>
-            </section>
+      <!-- Career Journey (new timeline, full-width white) -->
+      <section id="career-journey" class="bg-white -mx-4 md:-mx-8 px-4 md:px-8 py-10">
+        <h2 class="text-2xl font-bold text-[#ff764a] mb-8 text-center">Career Journey & Key Milestones</h2>
+        <ol class="relative border-s-2 border-gray-300 ps-6 max-w-4xl mx-auto space-y-8">
+          <li class="relative">
+            <span class="absolute -start-3 top-1 w-6 h-6 rounded-full bg-[#7a5195] border-4 border-white shadow"></span>
+            <div class="bg-[#e7dff3] rounded-lg p-4 shadow">
+              <h3 class="text-lg font-bold text-[#7a5195]">Marketing Manager <span class="font-normal text-gray-700">(Apr 2024 – Present)</span></h3>
+              <p class="text-gray-700 font-semibold">Alnafitha IT, Saudi Arabia (Hybrid)</p>
+              <p class="text-sm text-gray-600">Lead integrated marketing and cross-channel campaigns to accelerate pipeline and revenue.</p>
+            </div>
+          </li>
+          <li class="relative">
+            <span class="absolute -start-3 top-1 w-6 h-6 rounded-full bg-[#7a5195] border-4 border-white shadow"></span>
+            <div class="bg-[#e7dff3] rounded-lg p-4 shadow">
+              <h3 class="text-lg font-bold text-[#7a5195]">Marketing Manager <span class="font-normal text-gray-700">(May 2022 – Mar 2024)</span></h3>
+              <p class="text-gray-700 font-semibold">FORTE CLOUD, Egypt</p>
+              <p class="text-sm text-gray-600">Managed a team, led campaigns, and organized large-scale regional events.</p>
+            </div>
+          </li>
+          <li class="relative">
+            <span class="absolute -start-3 top-1 w-6 h-6 rounded-full bg-[#7a5195] border-4 border-white shadow"></span>
+            <div class="bg-[#e7dff3] rounded-lg p-4 shadow">
+              <h3 class="text-lg font-bold text-[#7a5195]">AWS Alliance & Marketing Lead <span class="font-normal text-gray-700">(Mar 2018 – Apr 2022)</span></h3>
+              <p class="text-gray-700 font-semibold">FORTE CLOUD, Egypt</p>
+              <p class="text-sm text-gray-600">Drove vendor relationships and lead generation for cloud solutions.</p>
+            </div>
+          </li>
+          <li class="relative">
+            <span class="absolute -start-3 top-1 w-6 h-6 rounded-full bg-[#7a5195] border-4 border-white shadow"></span>
+            <div class="bg-[#e7dff3] rounded-lg p-4 shadow">
+              <h3 class="text-lg font-bold text-[#7a5195]">Marketing & Business Development <span class="font-normal text-gray-700">(Apr 2017 – Feb 2018)</span></h3>
+              <p class="text-gray-700 font-semibold">FORTE CLOUD, Egypt</p>
+              <p class="text-sm text-gray-600">Initiated marketing channels and supported business development.</p>
+            </div>
+          </li>
+          <li class="relative">
+            <span class="absolute -start-3 top-1 w-6 h-6 rounded-full bg-[#7a5195] border-4 border-white shadow"></span>
+            <div class="bg-[#e7dff3] rounded-lg p-4 shadow">
+              <h3 class="text-lg font-bold text-[#7a5195]">Project Coordinator <span class="font-normal text-gray-700">(Mar 2015 – Aug 2015)</span></h3>
+              <p class="text-gray-700 font-semibold">Computek International</p>
+              <p class="text-sm text-gray-600">Managed schedules and resources for timely delivery.</p>
+            </div>
+          </li>
+          <li class="relative">
+            <span class="absolute -start-3 top-1 w-6 h-6 rounded-full bg-[#7a5195] border-4 border-white shadow"></span>
+            <div class="bg-[#e7dff3] rounded-lg p-4 shadow">
+              <h3 class="text-lg font-bold text-[#7a5195]">Product Marketing & Development Engineer <span class="font-normal text-gray-700">(Sep 2013 – Feb 2015)</span></h3>
+              <p class="text-sm text-gray-600">Transitioned technical background into marketing; focused on product positioning and readiness.</p>
+            </div>
+          </li>
+        </ol>
+      </section>
 
-            <!-- CloudTech Summit Combined Section -->
-            <section id="cloudtech-summit" class="bg-white rounded-lg shadow-lg p-6 transition-all duration-300 hover:shadow-xl hover:scale-[1.01]">
-                <h2 class="text-2xl font-bold text-[#ef5675] mb-4 text-center">CloudTech Summit: A Two-Year Retrospective</h2>
-                <p class="text-gray-600 mb-8 text-center max-w-2xl mx-auto">A look at the growth and success of Egypt's premier cloud technology event, co-created with AWS, and its impact on the region.</p>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-                    <!-- Year 2022 Stats -->
-                    <div class="bg-[#fdecd5] rounded-lg p-6 transition-all duration-300 hover:scale-105">
-                        <h3 class="text-xl font-bold text-[#000000] mb-2">CloudTech Summit 2022</h3>
-                        <p class="text-sm text-gray-600 mb-4">
-                            Registrants: 800+
-                            <br/>
-                            Attendees: 250+
-                            <br/>
-                            Vendors: 1 (AWS)
-                            <br/>
-                            Sponsors: 1
-                        </p>
-                        <div class="mt-4">
-                            <a href="https://fortecloud.com/cloudtech-summit-egypt2022/" target="_blank" rel="noopener noreferrer" class="bg-[#bc5090] text-white py-2 px-4 rounded-full font-bold text-sm hover:bg-[#a5427d] transition-colors">
-                                View 2022 Summit
-                            </a>
-                        </div>
-                    </div>
-                    <!-- Year 2023 Stats -->
-                    <div class="bg-[#e7dff3] rounded-lg p-6 transition-all duration-300 hover:scale-105">
-                        <h3 class="text-xl font-bold text-[#7a5195] mb-2">CloudTech Summit 2023</h3>
-                        <p class="text-sm text-gray-600 mb-4">
-                            Registrants: 1800+
-                            <br/>
-                            Attendees: 700+
-                            <br/>
-                            Vendors: 5+ (AWS, TrendMicro, AMD, Opentext, Gensys, others)
-                            <br/>
-                            Sponsors: 6+
-                        </p>
-                        <div class="mt-4">
-                            <a href="https://fortecloud.com/cloudtech-summit-egypt-2023-aws/" target="_blank" rel="noopener noreferrer" class="bg-[#bc5090] text-white py-2 px-4 rounded-full font-bold text-sm hover:bg-[#a5427d] transition-colors">
-                                View 2023 Summit
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="mt-8 space-y-6">
-                    <h3 class="text-xl font-bold text-[#ff764a] mb-2">Key Highlights of My Leadership:</h3>
-                    <div class="bg-gray-50 rounded-lg p-4 transition-all duration-300 hover:shadow-md hover:bg-gray-100">
-                        <p class="text-gray-700 font-medium">
-                            <span class="font-bold text-[#7a5195]">Strategic Vision:</span> As the co-creator and organizer, I orchestrated the strategic planning and execution of this regional event, establishing it as a must-attend for Egypt's tech community.
-                        </p>
-                    </div>
-                    <div class="bg-gray-50 rounded-lg p-4 transition-all duration-300 hover:shadow-md hover:bg-gray-100">
-                        <p class="text-gray-700 font-medium">
-                            <span class="font-bold text-[#ff764a]">Exponential Growth:</span> I drove a significant increase in attendance and vendor participation, with the number of attendees growing from 250+ in 2022 to over 700+ in 2023. This success was a direct result of my cross-channel marketing campaigns and a data-driven approach.
-                        </p>
-                    </div>
-                    <div class="bg-gray-50 rounded-lg p-4 transition-all duration-300 hover:shadow-md hover:bg-gray-100">
-                        <p class="text-gray-700 font-medium">
-                            <span class="font-bold text-[#ef5675]">Ecosystem Development:</span> I successfully expanded the event's vendor ecosystem from a single key partner (AWS) to a diverse group of over 5 vendors and 6 sponsors, demonstrating my ability to build strong partnerships and create value for all stakeholders.
-                        </p>
-                    </div>
-                    <div class="bg-gray-50 rounded-lg p-4 transition-all duration-300 hover:shadow-md hover:bg-gray-100">
-                        <p class="text-gray-700 font-medium">
-                            <span class="font-bold text-[#bc5090]">Impactful Results:</span> The event's success in attracting high-quality registrants (1800+ in 2023) and converting them to attendees showcased my skills in demand generation, lead nurturing, and event promotion.
-                        </p>
-                    </div>
-                </div>
-            </section>
+      <!-- Education & Certifications (full-width white) -->
+      <section id="education-certifications" class="bg-white -mx-4 md:-mx-8 px-4 md:px-8 py-10">
+        <h2 class="text-2xl font-bold text-[#ff764a] mb-6 text-center">Education & Credentials</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center max-w-5xl mx-auto">
+          <div>
+            <h3 class="text-xl font-bold text-[#ff764a] mb-2">Education</h3>
+            <ul class="list-none space-y-2">
+              <li class="flex items-center"><span class="w-2 h-2 bg-[#7a5195] rounded-full mr-2"></span><div><p class="font-bold">Executive MBA</p><p class="text-sm text-gray-600">Cardiff Institute, UK (Feb 2025)</p></div></li>
+              <li class="flex items-center"><span class="w-2 h-2 bg-[#7a5195] rounded-full mr-2"></span><div><p class="font-bold">Bachelor's in Mechatronics Engineering</p><p class="text-sm text-gray-600">Culture & Science City, Egypt (Jul 2013)</p></div></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-[#ff764a] mb-2">Certifications</h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-[#ffa600] text-white py-1 px-3 rounded-full text-sm">HubSpot Inbound Marketing</span>
+              <span class="bg-[#bc5090] text-white py-1 px-3 rounded-full text-sm">AWS Solution Architect Associate</span>
+              <span class="bg-[#ef5675] text-white py-1 px-3 rounded-full text-sm">AWS Cloud Practitioner</span>
+              <span class="bg-[#ff764a] text-white py-1 px-3 rounded-full text-sm">E-Marketing Diploma</span>
+            </div>
+          </div>
+        </div>
+      </section>
 
-            <!-- Skills & Technology Section -->
-            <section id="skills-tools" class="bg-white rounded-lg shadow-lg p-6 transition-all duration-300 hover:shadow-xl hover:scale-[1.01]">
-                <h2 class="text-2xl font-bold text-[#bc5090] mb-4 text-center">Skills & Technology Stack</h2>
-                <div class="flex flex-wrap gap-2 justify-center">
-                    <span class="bg-[#ffa600] text-white py-1 px-3 rounded-full text-sm transition-all duration-200 hover:scale-105">Event Marketing & Management</span>
-                    <span class="bg-[#bc5090] text-white py-1 px-3 rounded-full text-sm transition-all duration-200 hover:scale-105">Lead Generation & Conversion Optimization</span>
-                    <span class="bg-[#ef5675] text-white py-1 px-3 rounded-full text-sm transition-all duration-200 hover:scale-105">Go-to-Market (GTM) Strategy</span>
-                    <span class="bg-[#ff764a] text-white py-1 px-3 rounded-full text-sm transition-all duration-200 hover:scale-105">SEO/SEM</span>
-                    <span class="bg-[#7a5195] text-white py-1 px-3 rounded-full text-sm transition-all duration-200 hover:scale-105">Regional Planning</span>
-                    <span class="bg-[#4CAF50] text-white py-1 px-3 rounded-full text-sm transition-all duration-200 hover:scale-105">Content Strategy & Creation</span>
-                    <span class="bg-[#2196F3] text-white py-1 px-3 rounded-full text-sm transition-all duration-200 hover:scale-105">Marketing Automation</span>
-                    <span class="bg-[#FFC107] text-white py-1 px-3 rounded-full text-sm transition-all duration-200 hover:scale-105">CRM Integration & Management</span>
-                    <span class="bg-[#673AB7] text-white py-1 px-3 rounded-full text-sm transition-all duration-200 hover:scale-105">Cross-Channel & Integrated Campaigns</span>
-                    <span class="bg-[#9C27B0] text-white py-1 px-3 rounded-full text-sm transition-all duration-200 hover:scale-105">Vendor & Partner Relationship Management</span>
-                    <span class="bg-[#E91E63] text-white py-1 px-3 rounded-full text-sm transition-all duration-200 hover:scale-105">Data-Driven Marketing & Analytics</span>
-                    <span class="bg-[#009688] text-white py-1 px-3 rounded-full text-sm transition-all duration-200 hover:scale-105">Demand Generation</span>
-                    <span class="bg-[#FF5722] text-white py-1 px-3 rounded-full text-sm transition-all duration-200 hover:scale-105">Email Marketing & ABM</span>
-                    <span class="bg-[#9E9E9E] text-white py-1 px-3 rounded-full text-sm transition-all duration-200 hover:scale-105">Sales & Marketing Alignment</span>
-                    <span class="bg-[#3D5AFE] text-white py-1 px-3 rounded-full text-sm transition-all duration-200 hover:scale-105">Project Management</span>
-                </div>
-                <h3 class="text-xl font-bold text-[#7a5195] mb-2 mt-6 text-center">Tools & Platforms</h3>
-                <div class="flex flex-wrap gap-2 justify-center">
-                    <span class="bg-[#ff764a] text-white py-1 px-3 rounded-full text-sm transition-all duration-200 hover:scale-105">Salesforce</span>
-                    <span class="bg-[#ffa600] text-white py-1 px-3 rounded-full text-sm transition-all duration-200 hover:scale-105">HubSpot</span>
-                    <span class="bg-[#ef5675] text-white py-1 px-3 rounded-full text-sm transition-all duration-200 hover:scale-105">Microsoft Dynamics</span>
-                    <span class="bg-[#bc5090] text-white py-1 px-3 rounded-full text-sm transition-all duration-200 hover:scale-105">Google Analytics</span>
-                    <span class="bg-[#7a5195] text-white py-1 px-3 rounded-full text-sm transition-all duration-200 hover:scale-105">HubSpot Analytics</span>
-                    <span class="bg-[#4CAF50] text-white py-1 px-3 rounded-full text-sm transition-all duration-200 hover:scale-105">Zoho PageSense</span>
-                    <span class="bg-[#2196F3] text-white py-1 px-3 rounded-full text-sm transition-all duration-200 hover:scale-105">Asana</span>
-                    <span class="bg-[#FFC107] text-white py-1 px-3 rounded-full text-sm transition-all duration-200 hover:scale-105">Trello</span>
-                    <span class="bg-[#673AB7] text-white py-1 px-3 rounded-full text-sm transition-all duration-200 hover:scale-105">Clickup</span>
-                    <span class="bg-[#9C27B0] text-white py-1 px-3 rounded-full text-sm transition-all duration-200 hover:scale-105">Mailchimp</span>
-                    <span class="bg-[#E91E63] text-white py-1 px-3 rounded-full text-sm transition-all duration-200 hover:scale-105">Zoho Campaigns</span>
-                    <span class="bg-[#009688] text-white py-1 px-3 rounded-full text-sm transition-all duration-200 hover:scale-105">Build Custom GPT</span>
-                    <span class="bg-[#FF5722] text-white py-1 px-3 rounded-full text-sm transition-all duration-200 hover:scale-105">WordPress</span>
-                    <span class="bg-[#9E9E9E] text-white py-1 px-3 rounded-full text-sm transition-all duration-200 hover:scale-105">Drupal</span>
-                    <span class="bg-[#3D5AFE] text-white py-1 px-3 rounded-full text-sm transition-all duration-200 hover:scale-105">Wix</span>
-                    <span class="bg-[#E040FB] text-white py-1 px-3 rounded-full text-sm transition-all duration-200 hover:scale-105">LinkedIn Ads</span>
-                    <span class="bg-[#FF8A65] text-white py-1 px-3 rounded-full text-sm transition-all duration-200 hover:scale-105">Google Ads</span>
-                </div>
-            </section>
+      <!-- Contact (full-width white) -->
+      <section id="contact" class="bg-white -mx-4 md:-mx-8 px-4 md:px-8 py-12">
+        <h2 class="text-2xl font-bold text-[#7a5195] mb-4 text-center">Ready to Hire Me?</h2>
+        <p class="text-gray-700 mb-6 text-center max-w-3xl mx-auto">I am actively seeking new opportunities where I can apply my expertise to drive business growth. Let's connect and discuss how I can contribute to your team.</p>
+        <div class="flex flex-col md:flex-row justify-center gap-4">
+          <a href="mailto:ahmedposhi@gmail.com" class="bg-[#ef5675] text-white py-3 px-6 rounded-full font-bold transition-all duration-300 hover:bg-[#ff764a] hover:scale-105">Email Me</a>
+          <a href="https://www.linkedin.com/in/ahmedelposhi/" target="_blank" class="bg-gray-800 text-white py-3 px-6 rounded-full font-bold transition-all duration-300 hover:bg-gray-700 hover:scale-105">Find me on LinkedIn</a>
+        </div>
+      </section>
+    </main>
 
-            <!-- Career Journey Section - Visual Timeline -->
-            <section id="career-journey" class="bg-white rounded-lg shadow-lg p-6 transition-all duration-300 hover:shadow-xl hover:scale-[1.01]">
-                <h2 class="text-2xl font-bold text-[#ff764a] mb-6 text-center">Career Journey & Key Milestones</h2>
-                <div class="timeline relative pl-8 md:pl-16">
-                    <!-- Timeline item 1 -->
-                    <div class="relative mb-8 last:mb-0 transition-all duration-300 hover:scale-[1.02]">
-                        <div class="absolute -left-1 md:-left-2 top-2 w-4 h-4 rounded-full bg-[#7a5195] ring-4 ring-white z-10"></div>
-                        <div class="bg-[#e7dff3] rounded-lg p-4 shadow-md ml-4 md:ml-8">
-                            <h3 class="text-lg font-bold text-[#7a5195] mb-1">Marketing Manager (April 2024 - Present)</h3>
-                            <p class="text-gray-700 mb-2 font-semibold">Alnafitha IT, Saudi Arabia (Hybrid)</p>
-                            <p class="text-sm text-gray-500">I lead integrated marketing strategies and cross-channel campaigns to accelerate pipeline and revenue.</p>
-                        </div>
-                    </div>
-                    <!-- Timeline item 2 -->
-                    <div class="relative mb-8 last:mb-0 transition-all duration-300 hover:scale-[1.02]">
-                        <div class="absolute -left-1 md:-left-2 top-2 w-4 h-4 rounded-full bg-[#7a5195] ring-4 ring-white z-10"></div>
-                        <div class="bg-[#e7dff3] rounded-lg p-4 shadow-md ml-4 md:ml-8">
-                            <h3 class="text-lg font-bold text-[#7a5195] mb-1">Marketing Manager (May 2022 - Mar 2024)</h3>
-                            <p class="text-gray-700 mb-2 font-semibold">FORTE CLOUD, Egypt</p>
-                            <p class="text-sm text-gray-500">I managed a team of marketing specialists, spearheading campaigns and organizing large-scale regional events.</p>
-                        </div>
-                    </div>
-                    <!-- Timeline item 3 -->
-                    <div class="relative mb-8 last:mb-0 transition-all duration-300 hover:scale-[1.02]">
-                        <div class="absolute -left-1 md:-left-2 top-2 w-4 h-4 rounded-full bg-[#7a5195] ring-4 ring-white z-10"></div>
-                        <div class="bg-[#e7dff3] rounded-lg p-4 shadow-md ml-4 md:ml-8">
-                            <h3 class="text-lg font-bold text-[#7a5195] mb-1">AWS Alliance and Marketing Lead (Mar 2018 - Apr 2022)</h3>
-                            <p class="text-gray-700 mb-2 font-semibold">FORTE CLOUD, Egypt</p>
-                            <p class="text-sm text-gray-500">I developed and executed strategies focused on vendor relationship management and lead generation for cloud solutions.</p>
-                        </div>
-                    </div>
-                    <!-- Timeline item 4 -->
-                    <div class="relative mb-8 last:mb-0 transition-all duration-300 hover:scale-[1.02]">
-                        <div class="absolute -left-1 md:-left-2 top-2 w-4 h-4 rounded-full bg-[#7a5195] ring-4 ring-white z-10"></div>
-                        <div class="bg-[#e7dff3] rounded-lg p-4 shadow-md ml-4 md:ml-8">
-                            <h3 class="text-lg font-bold text-[#7a5195] mb-1">Marketing & Business Development (Apr 2017 - Feb 2018)</h3>
-                            <p class="text-gray-700 mb-2 font-semibold">FORTE CLOUD, Egypt</p>
-                            <p class="text-sm text-gray-500">I initiated marketing channels and contributed to business development efforts, focusing on pipeline acceleration.</p>
-                        </div>
-                    </div>
-                    <!-- Timeline item 5 -->
-                    <div class="relative mb-8 last:mb-0 transition-all duration-300 hover:scale-[1.02]">
-                        <div class="absolute -left-1 md:-left-2 top-2 w-4 h-4 rounded-full bg-[#7a5195] ring-4 ring-white z-10"></div>
-                        <div class="bg-[#e7dff3] rounded-lg p-4 shadow-md ml-4 md:ml-8">
-                            <h3 class="text-lg font-bold text-[#7a5195] mb-1">Project Coordinator (Mar 2015 - Aug 2015)</h3>
-                            <p class="text-gray-700 mb-2 font-semibold">Computek International</p>
-                            <p class="text-sm text-gray-500">I managed project schedules and resources to ensure timely delivery of key initiatives.</p>
-                        </div>
-                    </div>
-                    <!-- Timeline item 6 -->
-                    <div class="relative mb-8 last:mb-0 transition-all duration-300 hover:scale-[1.02]">
-                        <div class="absolute -left-1 md:-left-2 top-2 w-4 h-4 rounded-full bg-[#7a5195] ring-4 ring-white z-10"></div>
-                        <div class="bg-[#e7dff3] rounded-lg p-4 shadow-md ml-4 md:ml-8">
-                            <h3 class="text-lg font-bold text-[#7a5195] mb-1">Product Marketing & Development Engineer (Sep 2013 - Feb 2015)</h3>
-                            <p class="text-sm text-gray-500">I transitioned my technical background into a marketing role, focusing on product positioning and market readiness.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
+    <footer class="text-center mt-12 pt-8 border-t border-gray-300">
+      <p class="text-gray-500 text-sm">© 2025 Ahmed Elposhi</p>
+    </footer>
+  </div>
 
-            <!-- Education & Certifications Section -->
-            <section id="education-certifications" class="bg-white rounded-lg shadow-lg p-6 transition-all duration-300 hover:shadow-xl hover:scale-[1.01]">
-                <h2 class="text-2xl font-bold text-[#ff764a] mb-6 text-center">Education & Credentials</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
-                    <div>
-                        <h3 class="text-xl font-bold text-[#ff764a] mb-2">Education</h3>
-                        <ul class="list-none space-y-2">
-                            <li class="flex items-center transition-all duration-300 hover:scale-[1.02]">
-                                <div class="w-2 h-2 bg-[#7a5195] rounded-full mr-2"></div>
-                                <div>
-                                    <p class="font-bold">Executive MBA</p>
-                                    <p class="text-sm text-gray-600">Cardiff Institute, UK (Feb 2025)</p>
-                                </div>
-                            </li>
-                            <li class="flex items-center transition-all duration-300 hover:scale-[1.02]">
-                                <div class="w-2 h-2 bg-[#7a5195] rounded-full mr-2"></div>
-                                <div>
-                                    <p class="font-bold">Bachelor's in Mechatronics Engineering</p>
-                                    <p class="text-sm text-gray-600">Culture & Science City, Egypt (Jul 2013)</p>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-bold text-[#ff764a] mb-2">Certifications</h3>
-                        <div class="flex flex-wrap gap-2">
-                             <span class="bg-[#ffa600] text-white py-1 px-3 rounded-full text-sm transition-all duration-200 hover:scale-105">HubSpot Inbound Marketing</span>
-                             <span class="bg-[#bc5090] text-white py-1 px-3 rounded-full text-sm transition-all duration-200 hover:scale-105">AWS Solution Architect Associate</span>
-                             <span class="bg-[#ef5675] text-white py-1 px-3 rounded-full text-sm transition-all duration-200 hover:scale-105">AWS Cloud Practitioner</span>
-                             <span class="bg-[#ff764a] text-white py-1 px-3 rounded-full text-sm transition-all duration-200 hover:scale-105">E-Marketing Diploma</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
+  <!-- Charts -->
+  <script>
+    // Ensure Chart.js uses the page font everywhere
+    Chart.defaults.font.family = 'Inter';
+    Chart.defaults.font.weight = '500';
 
-            <!-- Contact Section -->
-            <section id="contact" class="bg-white rounded-lg shadow-lg p-8 text-center transition-all duration-300 hover:shadow-xl hover:scale-[1.01]">
-                <h2 class="text-2xl font-bold text-[#7a5195] mb-4">Ready to Hire Me?</h2>
-                <p class="text-gray-700 mb-4">I am actively seeking new opportunities where I can apply my expertise to drive business growth. Let's connect and discuss how I can contribute to your team.</p>
-                <div class="flex flex-col md:flex-row justify-center gap-4">
-                    <a href="mailto:ahmedposhi@gmail.com" class="bg-[#ef5675] text-white py-3 px-6 rounded-full font-bold transition-all duration-300 hover:bg-[#ff764a] hover:scale-105">Email Me</a>
-                    <a href="https://www.linkedin.com/in/ahmedelposhi/" target="_blank" class="bg-gray-800 text-white py-3 px-6 rounded-full font-bold transition-all duration-300 hover:bg-gray-700 hover:scale-105">Find me on LinkedIn</a>
-                </div>
-            </section>
-        </main>
-        <footer class="text-center mt-12 pt-8 border-t border-gray-300">
-            <p class="text-gray-500 text-sm">Copyright 2025 Ahmed Elposhi</p>
-        </footer>
-    </div>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Split long labels to multiple lines (for better radar readability)
+      const processLabel = (label, maxLength = 16) => {
+        if (label.length <= maxLength) return label;
+        const words = label.split(' ');
+        const lines = []; let currentLine = '';
+        for (const w of words) {
+          if ((currentLine + ' ' + w).trim().length > maxLength) { lines.push(currentLine.trim()); currentLine = w; }
+          else { currentLine = (currentLine + ' ' + w).trim(); }
+        }
+        if (currentLine) lines.push(currentLine.trim());
+        return lines;
+      };
 
-    <!-- JavaScript for the Chart.js radar chart -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Function to process labels for multi-line display on the chart
-            const processLabel = (label, maxLength = 16) => {
-                if (label.length <= maxLength) {
-                    return label;
-                }
-                const words = label.split(' ');
-                const lines = [];
-                let currentLine = '';
-                for (const word of words) {
-                    if ((currentLine + ' ' + word).trim().length > maxLength) {
-                        lines.push(currentLine.trim());
-                        currentLine = word;
-                    } else {
-                        currentLine = (currentLine + ' ' + word).trim();
-                    }
-                }
-                if (currentLine) {
-                    lines.push(currentLine.trim());
-                }
-                return lines;
-            };
+      const tooltipTitleCallback = (items) => {
+        const it = items[0];
+        let label = it.chart.data.labels[it.dataIndex];
+        return Array.isArray(label) ? label.join(' ') : label;
+        };
 
-            // Callback to fix the tooltip display for multi-line labels
-            const tooltipTitleCallback = (tooltipItems) => {
-                const item = tooltipItems[0];
-                let label = item.chart.data.labels[item.dataIndex];
-                if (Array.isArray(label)) {
-                    return label.join(' ');
-                }
-                return label;
-            };
-
-            const competencyRadarCtx = document.getElementById('competencyRadarChart');
-            if (competencyRadarCtx) {
-                new Chart(competencyRadarCtx, {
-                    type: 'radar',
-                    data: {
-                        labels: [
-                            'Integrated Campaigns',
-                            'GTM Strategy',
-                            'Lead Generation',
-                            'CRM & Automation',
-                            'Event Marketing',
-                            'Data & Analytics',
-                            'Vendor Management'
-                        ].map(l => processLabel(l)),
-                        datasets: [{
-                            label: 'Expertise Level',
-                            data: [95, 90, 90, 92, 90, 85, 90],
-                            backgroundColor: 'rgba(122, 81, 149, 0.2)',
-                            borderColor: '#7a5195',
-                            pointBackgroundColor: '#7a5195',
-                            pointBorderColor: '#fff',
-                            pointHoverBackgroundColor: '#fff',
-                            pointHoverBorderColor: '#7a5195'
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        plugins: {
-                            legend: {
-                                position: 'bottom',
-                                labels: {
-                                    font: {
-                                        family: 'Inter',
-                                        size: 12,
-                                    },
-                                    color: '#4b5563',
-                                }
-                            },
-                            tooltip: {
-                                callbacks: {
-                                    title: tooltipTitleCallback
-                                }
-                            }
-                        },
-                        scales: {
-                            r: {
-                                angleLines: {
-                                    color: '#d1d5db'
-                                },
-                                grid: {
-                                    color: '#e5e7eb'
-                                },
-                                pointLabels: {
-                                    font: {
-                                        size: 13,
-                                        family: 'Inter',
-                                        weight: '500'
-                                    },
-                                    color: '#1f2937'
-                                },
-                                ticks: {
-                                    backdropColor: 'rgba(255, 255, 255, 0.75)',
-                                    color: '#6b7280',
-                                    min: 50,
-                                    max: 100,
-                                    callback: function(value) {
-                                        const customLevels = [50, 60, 80, 90, 100];
-                                        if (customLevels.includes(value)) {
-                                            return value;
-                                        }
-                                        return '';
-                                    },
-                                    count: 5
-                                }
-                            }
-                        }
-                    }
-                });
+      const ctx = document.getElementById('competencyRadarChart');
+      if (ctx) {
+        new Chart(ctx, {
+          type: 'radar',
+          data: {
+            labels: ['Integrated Campaigns','GTM Strategy','Lead Generation','CRM & Automation','Event Marketing','Data & Analytics','Vendor Management'].map(processLabel),
+            datasets: [{
+              label: 'Expertise Level',
+              data: [95, 90, 90, 92, 90, 85, 90],
+              backgroundColor: 'rgba(122, 81, 149, 0.16)',
+              borderColor: '#7a5195',
+              pointBackgroundColor: '#7a5195',
+              pointBorderColor: '#fff',
+              pointHoverBackgroundColor: '#fff',
+              pointHoverBorderColor: '#7a5195',
+              borderWidth: 2
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: { position: 'bottom', labels: { color: '#374151', font: { size: 12 } } },
+              tooltip: { callbacks: { title: tooltipTitleCallback } }
+            },
+            scales: {
+              r: {
+                min: 0, max: 100, beginAtZero: true,
+                angleLines: { color: '#d1d5db' },
+                grid: { color: '#e5e7eb' },
+                pointLabels: { color: '#111827', font: { size: 13, weight: '500' } },
+                ticks: { stepSize: 20, showLabelBackdrop: true, backdropColor: 'rgba(255,255,255,0.75)', color: '#6b7280' }
+              }
             }
+          }
         });
-    </script>
+      }
+    });
+  </script>
 </body>
 </html>
